@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>mmu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* 🔥 PERFECT FULLSCREEN BACKGROUND */
+body{
+    background: url("Red Cute Love Heart Valentine Day Photo Collage.png") no-repeat center center fixed;
+    background-size: 65%;
+}
+
+/* Dark overlay for readability */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#e17aa2;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li{
+    cursor:pointer;
+    font-weight:500;
+}
+
+.login-btn{
+    color:white;
+    padding:8px 18px;
+    border-radius:20px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    transform:scale(1.1);
+}
+
+/* Responsive nav toggle */
+.nav-toggle{
+    display:none;
+    background:transparent;
+    border:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+    nav ul{
+        display:none;
+        position:absolute;
+        top:64px;
+        left:0;
+        right:0;
+        background:white;
+        flex-direction:column;
+        gap:0;
+        padding:16px 8%;
+        box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    nav.open ul{
+        display:flex;
+    }
+
+    nav ul li{
+        padding:12px 0;
+    }
+
+    .nav-toggle{
+        display:block;
+    }
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:140px 20px;
+    color:white;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    margin:auto;
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    padding:60px 8%;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:220px;
+    padding:40px 20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    text-align:center;
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
+}
+
+.card h2{
+    color:#ea4c89;
+}
+
+/* STORY */
+.story{
+    padding:80px 8%;
+    text-align:center;
+    color:white;
+}
+
+/* VALUES */
+.values{
+    padding:80px 8%;
+    color:white;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.value-card{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
+}
+
+/* TEAM */
+.team{
+    padding:80px 8%;
+    text-align:center;
+    color:white;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:40px;
+}
+
+.team-grid img{
+    width:100%;
+    border-radius:15px;
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR (loaded from nav.html) -->
+<nav>
+    <div class="logo"><a href="Dhammu.html">Valentine Card</a></div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <ul>
+        <li><a href="will-you.html">Will you</a></li>
+        <li><a href="Video.mp4">🥳</a></li>
+        <li><a href="Red Cute Love Heart Valentine Day Photo Collage.png">👑</a></li>
+        <li><a href="Colorful Wrapped 2023 Photo Collage.png">Pictures</a></li>
+    </ul>
+
+    <button class="login-btn">❤️</button>
+</nav>
+<script>
+// Load reusable nav from nav.html then initialize nav interactions
+fetch('nav.html')
+    .then(resp => resp.text())
+    .then(html => {
+        document.getElementById('site-nav').innerHTML = html;
+        if(typeof initNavInteractions === 'function') initNavInteractions();
+    })
+    .catch(err => console.error('Failed to load nav:', err));
+</script>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Dhammu ❤️</h1>
+<p> I Made this page only for you.</p>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+
+<div class="card">
+<h2 data-target="2022">0</h2>
+<p>I Found You</p>
+</div>
+
+<div class="card">
+<h2 data-target="0.00001"data-suffix="%">0</h2>
+<p>your love for me</p>
+</div>
+<div class="card">
+<h2 data-target="99" data-suffix="%">0%</h2>
+<p>You Hate me
+</p>
+</div>
+
+</section>
+
+<!-- STORY -->
+<section class="story">
+<h2>****
+</h2>
+<p>
+ don’t know how to speak about this. I don’t even know if you remember the days we spent together, but they replay in my mind every single day like flashes. I often find myself wondering how you are and what you might be doing. 
+</section>
+<section class="values">
+<h2 style="text-align:center;margin-bottom:40px;">Our Values</h2>
+<div class="value-grid">
+
+<div class="value-card">
+<h3>Now🫨</h3>
+<p>Now you’ve become a mature and independent woman, and I’m the most emotional person</p>
+</div>
+
+<div class="value-card">
+<h3>Past🐾</h3>
+<p> you feel so sad all the time,At that time, it was just you and me nothing else mattered </p>
+</div>
+
+<div class="value-card">
+<h3>Good Vibes🤍</h3>
+<p>you would share every little detail of your day with me what happened and how you felt. We used to talk for hours, sometimes until 2 or 3 PM.</p>
+</div>
+
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+<h2>Gallery</h2>
+
+<div class="team-grid">
+<img src="C:\Users\sanja\OneDrive\Desktop\DSA\WhatsApp Image 2026-02-08 at 7.47.11 PM.jpeg">
+<img src="C:\Users\sanja\OneDrive\Desktop\DSA\WhatsApp Image 2026-02-08 at 7.46.57 PM.jpeg">
+<img src="C:\Users\sanja\OneDrive\Desktop\DSA\WhatsApp Image 2026-02-08 at 7.47.27 PM (1) - Copy.jpeg">
+<img src="C:\Users\sanja\OneDrive\Desktop\DSA\WhatsApp Image 2026-02-08 at 7.47.08 PM.jpeg">
+</div>
+
+</section>
+
+<footer>
+I know that even talking to me is something you don’t like. I also know that when I wish you on your special days, you don’t like it. If that’s the case and I’ve done it anyway, I’m sorry for disturbing you. I don’t even know what I’m doing anymore, but I’m truly sorry. 
+</footer>
+
+<script>
+
+/* COUNTER */
+const counters = document.querySelectorAll(".card h2");
+
+counters.forEach(counter => {
+    const targetAttr = counter.getAttribute("data-target");
+    const target = parseFloat(targetAttr);
+    const suffix = counter.getAttribute("data-suffix") || '';
+
+    // Animation settings
+    const duration = 2000; // ms
+    const interval = 20; // ms
+    const steps = Math.max(1, Math.ceil(duration / interval));
+    const increment = target / steps;
+
+    // Determine decimal places to show (based on target's input precision)
+    const decimals = (targetAttr && targetAttr.indexOf('.') >= 0)
+        ? Math.min(6, targetAttr.split('.')[1].length)
+        : 0;
+
+    let current = 0;
+
+    const update = () => {
+        current += increment;
+
+        // If increment is < 1 we need to show fractional values, otherwise whole numbers
+        let display;
+        if(Math.abs(increment) < 1){
+            display = Number(Math.min(current, target)).toFixed(decimals);
+        } else {
+            display = Math.floor(Math.min(current, target));
+        }
+
+        counter.innerText = display + suffix;
+
+        if(current < target){
+            setTimeout(update, interval);
+        } else {
+            // Ensure exact final value
+            counter.innerText = targetAttr + suffix;
+        }
+    };
+
+    // Initialize display
+    counter.innerText = (decimals > 0 ? Number(0).toFixed(decimals) : '0') + suffix;
+    update();
+});
+
+/* REVEAL ON SCROLL */
+const reveal = document.querySelectorAll(".card, .value-card, .team-grid img");
+
+window.addEventListener("scroll", () => {
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveal.forEach(el => {
+
+        if(el.getBoundingClientRect().top < trigger){
+
+            el.style.opacity="1";
+            el.style.transform="translateY(0)";
+        }
+    });
+
+});
+
+/* LOGIN BUTTON EFFECT */
+/* LOGIN BUTTON EFFECT - initialize after nav is injected */
+function initNavInteractions(){
+    const btn = document.querySelector(".login-btn");
+    if(!btn) return;
+
+    btn.addEventListener("click", function(){
+        this.innerText="Welcome ❤️";
+        this.style.background="green";
+
+        setTimeout(()=>{
+            this.innerText="Login";
+            this.style.background="#ea4c89";
+        },2000);
+    });
+}
+// Enhance nav interactions: mobile toggle and active link handling
+function initNavInteractions(){
+    const btn = document.querySelector(".login-btn");
+    if(btn){
+        btn.addEventListener("click", function(){
+            this.innerText="Welcome ❤️";
+            this.style.background="green";
+
+            setTimeout(()=>{
+                this.innerText="Login";
+                this.style.background="#ea4c89";
+            },2000);
+        });
+    }
+
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    if(toggle && nav){
+        toggle.addEventListener('click', () => {
+            const open = nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+
+        // Close menu when a link is clicked
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    }
+
+    // Active link highlighting (simple path match)
+    const links = document.querySelectorAll('nav a');
+    const current = location.pathname.split('/').pop() || 'Dhammu.html';
+    links.forEach(a => {
+        const href = a.getAttribute('href');
+        if(href === current || href === location.pathname){
+            a.classList.add('active');
+        }
+    });
+}
+
+</script>
+
+<script>
+// Match last team image size to the first image without altering the first image
+window.addEventListener('load', () => {
+    const imgs = document.querySelectorAll('.team-grid img');
+    if(imgs.length < 2) return;
+    const first = imgs[0];
+    const last = imgs[imgs.length - 1];
+
+    // Get displayed size of the first image
+    const rect = first.getBoundingClientRect();
+    if(rect.width && rect.height){
+        last.style.width = rect.width + 'px';
+        last.style.height = rect.height + 'px';
+        last.style.objectFit = 'cover';
+        // ensure layout consistency
+        last.style.display = 'block';
+    }
+});
+</script>
+
+</body>
+</html>

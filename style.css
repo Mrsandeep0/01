@@ -1,0 +1,45 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#fafafa;
+}
+
+.hero{
+    text-align:center;
+    padding:120px 20px;
+    background:white;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    color:gray;
+    font-size:20px;
+}
+
+.story{
+    padding:80px 20%;
+    text-align:center;
+}
+
+.values{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:80px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:250px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
