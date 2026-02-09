@@ -237,23 +237,23 @@ footer{
 
     <button class="login-btn">❤️</button>
 </nav>
+<script>
+// Load reusable nav from nav.html then initialize nav interactions
+fetch('nav.html')
+    .then(resp => resp.text())
+    .then(html => {
+        document.getElementById('site-nav').innerHTML = html;
+        if(typeof initNavInteractions === 'function') initNavInteractions();
+    })
+    .catch(err => console.error('Failed to load nav:', err));
+</script>
 
 <!-- HERO -->
 <section class="hero">
 <h1>Dhammu ❤️</h1>
 <p> I Made this page only for you.</p>
-</section>
-
-<!-- STATS -->
-<section class="stats">
-
-<div class="card">
-<h2 data-target="2022">0</h2>
-<p>I Found You</p>
-</div>
-
-<div class="card">
-<h2 data-target="0.00001"data-suffix="%">0</h2>
+</button>
+</nav>
 <p>your love for me</p>
 </div>
 <div class="card">
@@ -298,10 +298,10 @@ footer{
 <h2>Gallery</h2>
 
 <div class="team-grid">
-    <img src="Red Cute Love Heart Valentine Day Photo Collage.png" alt="collage">
-    <img src="Colorful Wrapped 2023 Photo Collage.png" alt="collage">
-    <img src="Red Cute Love Heart Valentine Day Photo Collage.png" alt="collage">
-    <img src="Colorful Wrapped 2023 Photo Collage.png" alt="collage">
+    <img src="images/WhatsApp Image 2026-02-08 at 7.47.11 PM.jpeg" alt="photo1">
+    <img src="images/WhatsApp Image 2026-02-08 at 7.46.57 PM.jpeg" alt="photo2">
+    <img src="images/WhatsApp Image 2026-02-08 at 7.47.27 PM (1) - Copy.jpeg" alt="photo3">
+    <img src="images/WhatsApp Image 2026-02-09 at 1.12.45 AM.jpeg" alt="photo4">
 </div>
 
 </section>
