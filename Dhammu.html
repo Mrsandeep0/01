@@ -237,16 +237,6 @@ footer{
 
     <button class="login-btn">❤️</button>
 </nav>
-<script>
-// Load reusable nav from nav.html then initialize nav interactions
-fetch('nav.html')
-    .then(resp => resp.text())
-    .then(html => {
-        document.getElementById('site-nav').innerHTML = html;
-        if(typeof initNavInteractions === 'function') initNavInteractions();
-    })
-    .catch(err => console.error('Failed to load nav:', err));
-</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -308,10 +298,10 @@ fetch('nav.html')
 <h2>Gallery</h2>
 
 <div class="team-grid">
-<img src="images/WhatsApp Image 2026-02-08 at 7.47.11 PM.jpeg">
-<img src="images/WhatsApp Image 2026-02-08 at 7.46.57 PM.jpeg">
-<img src="images/WhatsApp Image 2026-02-08 at 7.47.27 PM (1) - Copy.jpeg">
-<img src="images/WhatsApp Image 2026-02-08 at 7.47.08 PM.jpeg">
+    <img src="Red Cute Love Heart Valentine Day Photo Collage.png" alt="collage">
+    <img src="Colorful Wrapped 2023 Photo Collage.png" alt="collage">
+    <img src="Red Cute Love Heart Valentine Day Photo Collage.png" alt="collage">
+    <img src="Colorful Wrapped 2023 Photo Collage.png" alt="collage">
 </div>
 
 </section>
